@@ -48,7 +48,7 @@
                 for (let MarkerNum = 1; MarkerNum <= 3; MarkerNum++) {
                     const lat = getRandomInRange(30, 35, 3);
                     const lng = getRandomInRange(-90, -100, 3);
-            
+                    
                     L.marker([lat, lng]).addTo(map);
                     bounds.push([lat, lng]);
 
@@ -66,12 +66,10 @@
                     })
                     .then(function(data) {
                         const locality = data.locality;
-                        markerInfoDiv.innerHTML += `
-                            <p>
-                            <b>Marker ${markerNumber}:
-                            Latitude: ${lat},
-                            Longitude: ${lng}<br></b>
-                            Locality: ${locality}
+                        markerInfoDiv.innerHTML += 
+                            `<p>
+                                <b>Marker ${markerNumber}: Latitude: ${lat}, Longitude: ${lng}</b><br>
+                                <b>Locality: ${locality}</b>
                             </p>`;
                     });
             }
